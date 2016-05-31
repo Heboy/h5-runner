@@ -1,0 +1,46 @@
+body {
+  overflow: hidden;
+}
+
+#app {
+  width: 320px;
+  height: 550px;
+  display: block;
+  border: 1px solid;
+  margin: 15px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 100px;
+  text-align: center;
+  box-shadow: 0 4px 3px 0 #dddddd;
+
+  .element {
+    position: absolute;
+    text-align: left;
+    font-size: 16px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .move-icon-up {
+    height: auto;
+    width: 25px;
+    position: absolute;
+    left: 50%;
+    top: 92%;
+    margin-left: -12px;
+    -webkit-animation: moveIconUp ease 1.5s both infinite;
+    animation: moveToBottom ease 1.5s both infinite;
+  }
+}
+
+.hide {
+  display: none;
+}
