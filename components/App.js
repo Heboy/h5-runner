@@ -45,7 +45,7 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         new window.SwipeEvent(document.body);
         document.body.addEventListener('swipe-top-to-bottom', this.swipeTopToBottomHandle.bind(this));
         document.body.addEventListener('swipe-bottom-to-top', this.swipeBottomToTopHandle.bind(this));

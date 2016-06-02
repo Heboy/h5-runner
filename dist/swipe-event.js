@@ -25,6 +25,7 @@ window.SwipeEvent = function SwipeEvent(dom) {
     function mouseDownHandle(e) {
         startX = Number(e.pageX);
         startY = Number(e.pageY);
+        moving = true;
     }
 
     function touchMoveHandle(e) {
@@ -33,8 +34,8 @@ window.SwipeEvent = function SwipeEvent(dom) {
         var y = Number(touch.pageY); //页面触点Y坐标
 
         //左右方向
-        if (Math.abs(x - startX) > Math.abs(y - startY) && moving === false) {
-            moving = true;
+        if (Math.abs(x - startX) > Math.abs(y - startY) && moving === true) {
+            moving = false;
             if (x - startX > 0) {
                 dom.dispatchEvent(swipeRightToLeft);
             }
@@ -43,8 +44,8 @@ window.SwipeEvent = function SwipeEvent(dom) {
             }
         }
         //上下方向
-        else if (moving === false) {
-            moving = true;
+        else if (moving === true) {
+            moving = false;
             if (y - startY > 0) {
                 dom.dispatchEvent(swipeTopToBottom);
             }
@@ -59,8 +60,8 @@ window.SwipeEvent = function SwipeEvent(dom) {
         var y = Number(e.pageY); //页面触点Y坐标
 
         //左右方向
-        if (Math.abs(x - startX) > Math.abs(y - startY) && moving === false) {
-            moving = true;
+        if (Math.abs(x - startX) > Math.abs(y - startY) && moving === true) {
+            moving = false;
             if (x - startX > 0) {
                 dom.dispatchEvent(swipeRightToLeft);
             }
@@ -69,8 +70,8 @@ window.SwipeEvent = function SwipeEvent(dom) {
             }
         }
         //上下方向
-        else if (moving === false) {
-            moving = true;
+        else if (moving === true) {
+            moving = false;
             if (y - startY > 0) {
                 dom.dispatchEvent(swipeTopToBottom);
             }
